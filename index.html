@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Music</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="phone-shell">
+    <div class="status-bar">
+      <span class="signal">●●●●●</span>
+      <span class="carrier">Carrier</span>
+      <span class="status-icons">▴  🔒 <b>100%</b></span>
+    </div>
+
+    <header class="nav-bar">
+      <button class="nav-button" id="navBack" aria-label="Back">‹ <span>Music</span></button>
+      <h1 id="screenTitle">Now Playing</h1>
+      <button class="nav-button edit-button" id="navAction" aria-label="Actions">•••</button>
+    </header>
+
+    <section class="screen now-screen active" id="nowScreen">
+      <div class="album-wrap">
+        <div class="album-art" id="albumArt">
+          <div class="sun"></div>
+          <div class="hill hill-one"></div>
+          <div class="hill hill-two"></div>
+          <div class="lotus">✦</div>
+        </div>
+        <button class="art-glow" id="artButton" aria-label="Open lyrics"></button>
+      </div>
+
+      <div class="track-meta">
+        <h2 id="trackTitle">Sravana Sandhya</h2>
+        <p id="trackArtist">Telugu Melodies</p>
+        <p id="trackAlbum">Mana Paata</p>
+      </div>
+
+      <div class="progress-row">
+        <span id="elapsed">0:00</span>
+        <input id="progress" type="range" min="0" max="100" value="0" aria-label="Track progress" />
+        <span id="duration">-0:35</span>
+      </div>
+
+      <div class="transport">
+        <button class="transport-back" id="prevTrack" aria-label="Previous"></button>
+        <button class="transport-play" id="playPause" aria-label="Play"></button>
+        <button class="transport-next" id="nextTrack" aria-label="Next"></button>
+      </div>
+
+      <div class="volume-row">
+        <span class="volume-low">◖</span>
+        <input id="volume" type="range" min="0" max="1" step="0.01" value="0.7" aria-label="Volume" />
+        <span class="volume-high">◉</span>
+      </div>
+    </section>
+
+    <section class="screen library-screen" id="libraryScreen">
+      <div class="search-bar"><span>⌕</span><input id="songSearch" placeholder="Search" /></div>
+      <div class="section-title">SONGS</div>
+      <div class="song-list" id="songList"></div>
+    </section>
+
+    <nav class="tab-bar">
+      <button class="tab" data-tab="playlists"><span class="tab-icon playlist-icon"></span><span>Playlists</span></button>
+      <button class="tab" data-tab="artists"><span class="tab-icon artist-icon"></span><span>Artists</span></button>
+      <button class="tab" data-tab="songs"><span class="tab-icon music-icon"></span><span>Songs</span></button>
+      <button class="tab" data-tab="more"><span class="tab-icon more-icon"></span><span>More</span></button>
+    </nav>
+
+    <audio id="audio"></audio>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
